@@ -1,4 +1,1 @@
-console.log("em chào thầy ạ");
-
-console.log("hello ae");
-
+console.log("em chào thầy ạ")
