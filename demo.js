@@ -1,2 +1,1 @@
-console.log("em chào thầy ạ")
-Hello World 
+console.log("em chào thầy ạ") 
