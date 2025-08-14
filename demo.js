@@ -1,8 +1,2 @@
-onsole.log("em chào thầy ạ")
-print("Hello World!") 
-print("Hello World!")
-print("Hello World!")
-print("Hello World!")
-print("Hello World!")
-print("Hello World!")
+history
 
