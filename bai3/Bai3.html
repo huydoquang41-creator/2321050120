@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <MARQUEE>
+            <img src="sieu-xe-Porches.jpg" width="150px">
+        </MARQUEE>
+        <h1>FORM dien thong tin</h1>
+        <form>
+            <div>
+                <p><b>Ho va Ten</b></p>
+                <!--Khong dien gi mac dinh la type = 'text'-->
+                <input type='text' name="hovaten" placeholder="Nhap ho va ten">
+            </div>
+            <div>
+                <p><b>Ma so sinh vien</b></p>
+                <input type='text' name="mssv" placeholder="Nhap ma so sinh vien" value="2321050120" readonly>
+            </div>
+            <div>
+                <p><b>Gioi thieu ban than</b></p>
+                    <textarea name="gioithieu" placeholder="Nhap phan gioi thieu"></textarea>
+            </div>
+            <div>
+                <p><b>Email</b></p>
+                <input type="email" name="email" placeholder="Nhap email co dinh dang @gmail.com">
+                 <input type="submit">
+            </div>
+            <div>
+                <p><b>So dien thoai</b></p>
+                <input type="tel" name="sdt" 
+                pattern="([0]{1})([9,3,4]{1})([0-9]{8})" placeholder="Nhap dinh dang 09xxxxxxxx" required>
+                <!--required : bat buoc nguoi dung phai dien-->
+                <input type="submit">
+            </div>
+            <div>
+                <p><b>Gioi tinh</b></p>
+                <input type="radio" name="gioitinh" value="nam">
+                Nam<br>
+                <input type="radio" name="gioitinh" value="nu">
+                Nu<br>
+                <input type="radio" name="gioitinh" value="khong xac dinh">
+                Khong xac dinh   
+            </div>
+            <div>
+                <p><b>So thich</b></p>
+                <input type="checkbox" name="so thich" value="sport">Sport<br>
+                <input type="checkbox" name="so thich" value="music">Music<br>
+                <input type="checkbox" name="so thich" value="game">Game<br>
+            </div>
+            <div>
+                <p><b>Cac trinh duyet</b></p>
+                <select name="browsers">
+                    <option value="coc coc">Coc coc</option>
+                    <option value="chorme">Chorme</option>
+                    <option value="firefox">Firefox</option>
+                </select>
+            </div>
+            <div>
+                <p><b>Muc tien</b></p>
+                0$<input type="range" name="muctien" value="50">100$
+            </div>
+            <div>
+                <p><b>Tuoi</b></p>
+                <input type="number" name="tuoi" value="0" step="1">
+            </div>
+            <div>
+                <p><b>Ngay thang nam sinh</b></p>
+                <input type="date" name="ngaythangnamsinh">
+            </div>
+            <div>
+                <p><b>Mau sac</b></p>
+                <!-- type color : mau sac -->
+                <input type="color" name="mausac">
+            </div>
+            <div>
+                <p><b>Mat khau</b></p>
+                <input type="password" name="mat khau">
+                <input type="submit">
+            </div>
+            <div>
+                <p><b>Dien lai thong tin</b></p>
+                <input type="reset" name="lam lai">
+            </div>
+        </form>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/FsEJTZzDYx8?si=58LM_M69BdSobgcF" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div>
+            <audio controls>
+                <source src="" type="audio/mp3">
+            </audio><br>
+            <video controls width="560" height="315">
+                <source src="url" type="video/mp4">
+            </video>
+        </div>
+        <div>
+            <center><font size="5"><b>The &lt;h1&gt;dung de viet tieu de</b></font></center>
+        </div>
+    </body>
+</html>
