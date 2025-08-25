@@ -5,6 +5,7 @@
         <title>Document</title>
     </head>
     <body>
+        <!-- The MARQUEE : Dùng để chạy dòng chữ (có thể là ảnh hoặc video ừaaz) -->
         <MARQUEE>
             <img src="sieu-xe-Porches.jpg" width="150px">
         </MARQUEE>
@@ -77,22 +78,29 @@
             </div>
             <div>
                 <p><b>Mat khau</b></p>
+                <!-- type='password':De dat mat khau -->
                 <input type="password" name="mat khau">
                 <input type="submit">
             </div>
             <div>
                 <p><b>Dien lai thong tin</b></p>
+                <!-- type='reset':De dien lai -->
                 <input type="reset" name="lam lai">
             </div>
         </form>
+        <!-- The iframe : Hien 1 video minh copy -->
         <iframe width="560" height="315" src="https://www.youtube.com/embed/FsEJTZzDYx8?si=58LM_M69BdSobgcF" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div>
+            <!-- the audio :Hien 1 bai hat o trong may
+               <source src , type="audio/mp3"> -->
             <audio controls>
                 <source src="" type="audio/mp3">
             </audio><br>
+            <!-- The video : hien 1 video trong may
+                <source src="url" type="video/mp4"> -->
             <video controls width="560" height="315">
                 <source src="url" type="video/mp4">
             </video>
@@ -100,5 +108,12 @@
         <div>
             <center><font size="5"><b>The &lt;h1&gt;dung de viet tieu de</b></font></center>
         </div>
+        <!--Dau < : &lt;
+            Dau > : &gt;
+            Dau & : &amp;
+            Dau " : &quot;
+            Dau © : &copy;
+            ...Tham khao phu luc 4 (Cac ky tu dac biet trong HTML) 
+             -->
     </body>
 </html>

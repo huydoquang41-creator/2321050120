@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 4 CSS</title>
+    <style>
+        div b {
+            color:red;
+            
+        }
+        p{
+            color:pink;
+            background-color:black;
+            font-size:50px;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        #title{
+            color:orange;
+            background-color:white;
+            font-size:50px;
+
+        }
+        .title2{
+            color:crimson;
+        }
+        .title2{
+            color:red;
+            background-color: black;
+        }
+        .box1{
+            background-color:red;
+        }
+        .box2{
+            background-color:blue;
+            /* 1 gia tri cach xung quanh */
+            /* 2 gia tri : gia tri dau (tren duoi)
+                        gia tri thu 2 (trai phai) */
+            /* 4 gia tri : tren phai duoi trai */
+            /* margin:50px 10px 100px 30px; */
+            width:50%;
+            margin:50px auto;
+            padding:100px;
+            
+        }
+        .box3{
+            background-color:yellow;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+    <div class="box1">Box1</div>
+    <div class="box2">Box2</div>
+    <div class="box3">Box3</div>
+
+    <!-- Inline Style Sheet -->
+    <h1 style="color:pink ; font-size:50px ; background-color:black ; border: 5px solid pink">Inline Style</h1>
+    <!-- Internal Style Sheet -->
+    <p id="title">Internal Style</p>
+    <p class="title2">Black Pink</p>
+    <h1 class="title2">Vi du ve class</h1>
+    <!-- External Style Sheet -->
+    <!-- Do uu tien 
+    1.Inline Style 
+    2.External
+    3.Internal -->
+    <h2>Vi du ve do uu tien</h2>
+    <b><div>Dai hoc mo dia chat</div></b>
+    <div>Dai hoc<b>mo dia chat</b></div>
+</body>
+</html>
