@@ -1,0 +1,50 @@
+body{
+    margin:0px;
+}
+header{
+    border-bottom: 5px solid gray;
+}
+nav{
+    background-color: #0c4ca3;
+}
+ul{
+    display : flex;
+    list-style:none;
+    justify-content: center;
+}
+li{
+    padding: 15px;
+}
+.border{
+    border-right: 1px solid #f1f1f2;
+}
+.danhmuclienket{
+    color: white;
+    text-decoration: none;
+    font-family: Roboto, Arial, Tahoma ;
+}
+.benner-qc{
+    margin: 10px 0px ;
+    display: flex;
+    justify-content: center;
+}
+.qc{
+    display: flex;
+    justify-content: space-between;
+}
+.tieude{
+    background-color: white;
+    font-size: 50px;
+    color: blue;
+}
+.noidungtintuc{
+    display: flex;
+}
+.noidung{
+    height: 300px;
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+    margin-right: auto;
+    border: #f1f1f2;
+}
