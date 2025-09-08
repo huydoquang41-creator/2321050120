@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+}
+.header{
+    padding: 20px;
+    background-color: black;
+    text-align: center;    
+}
+.main{
+    width: 100% ;
+    display: flex;
+    background-color: #ccc;
+}
+.trai{
+    width: 20% ;
+    background-color: red;
+    height: 670px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.giua{
+    width: 60%;
+    background-color:black;
+    height: 670px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.phai{
+    width: 20%;
+    background-color: aqua;
+    height: 670px;
+    margin: 5px;
+    border-radius: 5px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+.tieude{
+    color :white;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif-;
+}
+.creat{
+    padding:10px;
+    color: aliceblue;
+    background-color: #ccc;
+    border-radius: 18px;
+}
