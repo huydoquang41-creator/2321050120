@@ -2,21 +2,60 @@ body{
     margin: 0;
 }
 .header{
-    padding: 20px;
+    width: 100%;
     background-color: black;
-    text-align: center;    
+    height: 50px;
+    display: flex;    
+}
+.title{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+.tieude{
+    color :white;
+    font-family: 'Times New Roman', Times, serif-;
+}
+.iconhome{
+    /* background-color: aqua; */
+    display: flex;
+    color: aliceblue;
+}
+
+.header-trai{
+    width: 20% ;
+    /* background-color: aqua; */
+    margin: 0;
+}
+.header-phai{
+    width: 20%;
+    /* background-color: aqua; */
+}
+.header-giua{
+    width: 60%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+}
+.search{
+    height: 30px;
+    border-radius: 18px;
+    padding: 15px;
+    width: 100%;
 }
 .main{
     width: 100% ;
-    display: flex;
     background-color: #ccc;
+    display: flex;
 }
 .trai{
     width: 20% ;
-    background-color: red;
+    background-color: black;
     height: 670px;
     margin: 5px;
     border-radius: 5px;
+    overflow: scroll; 
+    scrollbar-width: none;   
 }
 .giua{
     width: 60%;
@@ -27,23 +66,70 @@ body{
 }
 .phai{
     width: 20%;
-    background-color: aqua;
+    background-color: black;
     height: 670px;
     margin: 5px;
     border-radius: 5px;
 }
-.title{
-    display: flex;
-    justify-content: space-between;
-}
-.tieude{
-    color :white;
-    padding: 10px;
-    font-family: 'Times New Roman', Times, serif-;
-}
 .creat{
     padding:10px;
+    height: 20px;
+    background-color:slategray;
     color: aliceblue;
-    background-color: #ccc;
     border-radius: 18px;
+    margin: 0 5px 0 5px;
 }
+.title1{
+    width: 20vh;
+    display: flex;
+}
+.creat1{
+    font-size: 11px;
+    padding:10px;
+    background-color:slategray;
+    color: aliceblue;
+    border-radius: 18px;
+    
+}
+.demuc{
+    width:100%;
+    background-color: black;
+    display: flex;
+}
+.nd-demuc{
+    padding:10px;
+    background-color:slategray;
+    color: aliceblue;
+    border-radius: 18px;
+    margin:10px;
+}
+.nd-danhmuc2{
+    display: flex;
+    width:100%;
+    background-color: black;
+    justify-content: space-between;
+}
+.nd-danhmuc{
+    width: 20%;
+    background-color:slategray;
+    display: flex;
+    color: aliceblue;
+    border-radius: 8px;
+    margin: 10px;
+    height: 35px;
+}
+.danhmuc1{
+    width: 100%;
+    
+}
+.nd-danhmuc1{
+    width: 37vh;
+    height: 40px;
+    display: flex;
+    background-color:slategray;
+    color: aliceblue;
+    border-radius: 2px;
+    margin: 15px 5px 15px 5px;
+    
+}
+
