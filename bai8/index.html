@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <script>
+        // de viet ghi chu js dung ki tu //
+        document.writeln('Hello world '+' <br>');
+
+        // Java Script de noi chuoi 
+        let hoTen = 'Do Quang Huy';
+        document.writeln(hoTen + '<br>');
+
+        // khai bao 1 hang so
+        const pi = 3.14;
+        document.writeln('So pi : ',pi + '<br>');
+
+        let soThuNhat = 10;
+        let soThuHai = 5;
+        let ketQua = 0;
+
+        //+
+        ketQua = soThuNhat + soThuHai 
+        document.writeln(ketQua + '<br>')
+
+        //-
+        ketQua = soThuNhat - soThuHai
+        document.writeln(ketQua + '<br>')
+
+        //*
+        ketQua = soThuNhat * soThuHai
+        document.writeln(ketQua + '<br>')
+
+        // /
+        ketQua = soThuNhat / soThuHai
+        document.writeln(ketQua + '<br>')
+
+        //Sothunhat = sothunhat + sothuhai
+        soThuNhat += soThuHai
+        document.writeln(soThuNhat + '<br>')
+
+        document.writeln(soThuNhat == soThuHai)
+        document.writeln(soThuNhat != soThuHai);
+        document.writeln(!(soThuNhat != soThuHai)+'<br>')
+
+        let thongTinSV = {
+            hoTen : 'Do Quang Huy',
+            tuoi : 20 ,
+            gioitinh : true,
+            lop : 'Cong nghe phan mem k68',
+            diaChiSV :{
+                thanhPho:'Vinh Phuc',
+                huyen:'Phuc Yen',
+                duong:'Dinh Tien Hoang',
+            }
+        }
+
+        
+        let nNay = 2025;
+        
+        document.writeln('Xin chao '
+        + thongTinSV.hoTen +'<br>'
+        + 'Lop:' 
+        + thongTinSV.lop +'<br>'
+        +'thanh pho :' 
+        + thongTinSV.diaChiSV.thanhPho + '<br>'
+        +'Sinh nam :' 
+        +(nNay- thongTinSV.tuoi) 
+        + '<br>');
+
+
+        // Doi kieu du lieu
+        let soThuBa = '9.5' ;
+
+        soThuBa = parseInt(soThuBa);
+
+        document.writeln(typeof (soThuBa))
+        document.writeln(soThuBa)
+    </script>   
+</body>
+</html>
