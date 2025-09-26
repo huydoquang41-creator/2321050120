@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let maDonHang = {
+                thongTinKhachHang:{
+                hoTen : '',
+                soDienThoai:'',
+                trangThai : true,
+                },
+                danhSachSanPham:{
+                    tenSanPham:{
+                        Coffee:{
+                            maSanPham:'sp1',
+                            soLuong:10,
+                            giaTien:35000,
+                        },
+                        Matcha:{
+                            maSanPham:'sp2',
+                            soLuong:10,
+                            giaTien:40000,
+                        },
+                        Milk_Tea:{
+                            maSanPham:'sp3',
+                            soLuong:10,
+                            giaTien:50000,
+                        },
+                    }
+                },
+                trangThaiThanhToan : true,
+                diaChiGiaoHang : '',
+            }
+        let tong = maDonHang.danhSachSanPham.tenSanPham.Coffee.giaTien *  maDonHang.danhSachSanPham.tenSanPham.Coffee.soLuong 
+        + maDonHang.danhSachSanPham.tenSanPham.Matcha.giaTien * maDonHang.danhSachSanPham.tenSanPham.Matcha.soLuong
+        + maDonHang.danhSachSanPham.tenSanPham.Milk_Tea.giaTien * maDonHang.danhSachSanPham.tenSanPham.Milk_Tea.soLuong;
+
+        document.writeln('Tổng giá trị đơn hàng là : ',tong)
+        
+        // String
+        let hoTen = 'Đỗ Quang Huy'
+        document.writeln('<br>',hoTen.length); //Độ dài của chuỗi
+        
+        //Truy cập String
+        var myString = "Hello";
+        document.writeln('<br>',myString[4]);
+
+        // Cắt chuỗi
+        document.writeln('<br>',myString.slice(1,4))//Bắt đầu tại 1 đến vị trí số 3
+        
+        //Thay đổi chuỗi
+        document.writeln('<br>',myString.replace('Hello','Hi'));//vị trí 1 là string ban đầu vị trí 2 là string thay thế
+
+        //Chuyển đổi chữ hoa với chữ thường
+            //Upper
+        document.writeln('<br>', myString.toUpperCase())
+            //Lower
+        document.writeln('<br>', myString.toLowerCase())
+
+        // Tìm kiếm chuỗi
+            //cách 1 indexOf():Trả ra vị trí 
+            document.writeln('<br>',myString.toLowerCase().indexOf('h'))
+            //Cách 2 includes : Trả ra True or False
+            document.writeln('<br>',myString.includes('l'))
+
+        // Tách chuỗi thành 1 mảng
+        document.writeln('<br>',myString.split('e'))
+
+        // Kiểm tra 
+            // chuỗi có bắt đầu bằng 1 chuỗi hay không
+            document.writeln('<br>',myString.startsWith('H'))
+
+        // Number
+            // Để định dạng số với số thập phân nhất định
+            // .toFixed()
+            var pi = 3.14453613254632;
+            document.writeln('<br>',pi.toFixed(2))
+
+            // Kiểm tra biến có phải số hay không 
+                // Nếu là số thì trả ra False
+            document.writeln('<br>',isNaN('10'))//Chỉ quan tâm giá trị
+
+            //Date
+                //new Date():Tạo ra ngày h hiện tại
+            let today = new Date();
+            document.writeln('<br>',today)
+
+            let ntn = new Date('2005-04-11')
+            document.writeln('<br>',ntn)
+
+                // Lấy ra năm
+                document.writeln('<br>',today.getFullYear())
+                // Lấy ra tháng
+                document.writeln('<br>',today.getMonth())
+                // Lấy ra ngày
+                document.writeln('<br>',today.getDate())//Trả ra ngày hôm nay
+                document.writeln('<br>',today.getDay())//Trả ra thứ của ngày index = 0
+                //Lấy ra giờ
+
+                //Lấy ra phút
+
+                //Lấy ra giây
+    </script>
+</body>
+</html>
