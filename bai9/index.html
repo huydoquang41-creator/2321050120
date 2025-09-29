@@ -104,6 +104,94 @@
                 //Lấy ra phút
 
                 //Lấy ra giây
+
+
+
+            //Mảng
+            let arr = [1,2,3,4,'a','b','c',2,3]
+            document.writeln('<br>',Array.isArray(arr),'<br>')
+            document.writeln(arr.length)
+            document.writeln(arr[2])
+            // Tìm vị trí xh sớm nhất 
+            document.writeln(arr.indexOf(3))
+            // tìm vị trí cuối
+            document.writeln(arr.lastIndexOf(3))
+
+            arr[3] = 6
+            document.writeln('<br>',arr,'<br>')
+
+            let a,b,c,d
+            a = [1,2,3]
+            b = 'JavaScript'
+            c = [42,'JS']
+            d = a.concat(b,c) //concat dùng để nối mảng
+            //d = d.join('-') //biến 1 mảng thành 1 chuỗi 
+            d.pop()
+            d.push(235)
+            //d.reverse(arr) // Đảo chiều mảng
+            d.shift() //Xóa phần tử đầu tiên trong mảng
+            d.unshift(1) //Thêm 1 phần tử vào đầu mảng
+            document.writeln(d)
+            let e = '100000000000000000000001'
+            let f = parseInt(e[e.length -1]) 
+            
+            if (f%2 ==0){
+                document.writeln(e,"là số chẵn ")
+            } 
+            else {
+                document.writeln(e,'là số lẻ')
+            }
+            document.writeln('<br>')
+            let now2 = new Date()
+            let now = now2.getHours()
+            if (5 <= now && now <= 10){
+                document.writeln("Chào buổi sáng")
+            }
+            else if(10 < now && now <= 13){
+                document.writeln("Chào buổi trưa")
+            }
+            else if(13 < now && now <= 17){
+                document.writeln("Chào buổi chiều")
+            }
+            else if(17 < now && now <= 22){
+                document.writeln("Chào buổi tối")
+            }
+            else {
+                document.writeln("Chào buổi đêm")
+            }
+
+            let diemA = 10;
+            let diemB = 9;
+            let diemC = 10;
+            if (10 < diemA || diemA < 0 ){
+                document.writeln('<br>',"Điểm A nhập vào không hợp lệ")
+            }
+            else if(10 < diemB || diemB < 0 ){
+                document.writeln('<br>',"Điểm B nhập vào không hợp lệ")
+            }
+            else if(10 < diemC || diemC < 0 ){
+                document.writeln('<br>',"Điểm C nhập vào không hợp lệ")
+            }
+            else{
+                document.writeln('<br>',"Điểm nhập vào hợp lệ",'<br>')
+            
+                let total = diemA * 0.6 + diemB * 0.3 + diemC * 0.1
+                if (10 >= total && total >=8 ){
+                    document.writeln('A')
+                }
+                else if(8 > total && total >=7 ){
+                    document.writeln('B')
+                }
+                else if(7 > total && total >=5 ){
+                    document.writeln('C')
+                }
+                else if(4 > total && total >=5 ){
+                    document.writeln('D')
+                }
+                else{
+                    document.writeln('F')
+                }
+            }
     </script>
 </body>
 </html>
