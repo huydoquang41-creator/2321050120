@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" id="tinhDiem">
+        <tr>
+            <th>STT</th>
+            <th>Hoten</th>
+            <th>DiemA</th>
+            <th>DiemB</th>
+            <th>DiemC</th>
+            <th>DGHP</th>
+            <th>XepLoai</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+            <td>6</td>
+            <td>4</td>
+            <td>10</td>
+            <td class="dchp"></td>
+            <td class="xeploai"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>B</td>
+            <td>2</td>
+            <td>8</td>
+            <td>4</td>
+            <td class="dchp"></td>
+            <td class="xeploai"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>C</td>
+            <td>10</td>
+            <td>7</td>
+            <td>8</td>
+            <td class="dchp"></td>
+            <td class="xeploai"></td>
+        </tr>
+    </table>
+    <script>
+        function tinhDiem(){
+            let table = document.getElementById('tinhDiem')
+            let rows = table.getElementsByTagName('tr')
+            
+            for (let i = 0 ; i <= rows.length ; i++){
+                let cells = row[i].getElementsByTagName('td');
+                diemA = parseFloat(cell[2].innerText)
+                diemB = parseFloat(cell[3].innerText)
+                diemC = parseFloat(cell[4].innerText)
+            
+                let dchp = (diemA + diemB + diemC)/3
+                cells[5].innerText = dchp
+
+                if (dchp >= 8.5){
+                    cells[6].innerText = 'Gioi'
+                }
+                else if (dchp >= 7 ){
+                    cells[6].innerText = 'Kha'
+                }
+                else if (dchp >= 5 ){
+                    cells[6].innerText = 'TrungBinh'
+                }
+                else{
+                    cells[6].innerText = 'Yeu'
+                }
+            }
+            
+        }
+    tinhDIem()
+    </script>
+</body>
+</html>

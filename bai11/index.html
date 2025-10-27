@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            width: 100%;
+            height: 500px;
+        }
+        .khung{
+            width: 50%;
+            height: 300px;
+            margin: auto;
+            background-color: aqua;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Tinh tong</h1>
+    <div>
+        <p>Nhap vao so thu nhat</p>
+        <input id="soThuNhat" type="number" >
+    </div>
+    <div>
+        <p>Nhap vao so thu nhat</p>
+        <input id="soThuHai" type="number">
+    </div>
+    <div>
+        <button onclick="tinhTong()">Tinh tong</button>
+    </div>
+    Ket Qua:<input id="ketQua" type="number">
+    <script>
+        
+        function tinhTong(){
+            let soThuNhat = parseInt(document.getElementById('soThuNhat').value)
+            let soThuHai = parseInt(document.getElementById('soThuHai').value)
+            let canhBao =''
+            if (!soThuNhat && !soThuHai){
+                canhBao = 'Vui long nhap vao so thu nhat va so thu hai'
+            }
+            if (!soThuNhat){
+                canhBao = 'Vui long nhap vao so thu nhat'
+            }
+            if(!soThuHai){
+                canhBao = 'Vui long nhap vao so thu hai'
+            }
+            if(canhBao){
+                alert(canhBao)
+            }
+            
+            let tong = soThuNhat + soThuHai
+            document.getElementById('ketQua').value = tong
+            
+        }
+    </script>
+     -->
+    <div class="khung">
+     <h1>Tinh diem chu</h1>    
+    <p>Biet tong = diemA * 0.6 + diemB * 0.3 + diemC * 0.1</p>
+    
+    Điểm A<input id="A" class="diemA" placeholder="Nhập điểm A"><br>
+    Điểm B<input id="B" class="diemB" placeholder="Nhập điểm B"><br>
+    Điểm C<input id="C" class="diemC" placeholder="Nhập điểm C"><br>
+    <button onclick="tinhDiem()">Xem kết quả</button><br>
+    Ket qua diem chu :<input type="text" id="ketQua">
+    </div>
+    <script>
+
+        function tinhDiem(diemA, diemB, diemC){
+            diemA = parseFloat(document.getElementById('A').value)
+            diemB = parseFloat(document.getElementById('B').value)
+            diemC = parseFloat(document.getElementById('C').value)
+            if (diemA<0 || diemA>10 || !diemA){
+                alert('Điểm A nhập vào không hợp lệ xin mời nhập lại')
+            }
+            else if (diemB<0 || diemB>10 || !diemB){
+                alert('Điểm B nhập vào không hợp lệ xin mời nhập lại')
+            }
+            else if (diemC<0 || diemC>10 || !diemC){
+                alert('Điểm C nhập vào không hợp lệ xin mời nhập lại')
+            }
+            else{
+                // document.writeln('Điểm A là : ',diemA,'<br>','Điểm B là : ',diemB,'<br>','Điểm C là : ',diemC,'<br>')
+                let diem = diemA * 0.6 + diemB * 0.3 + diemC * 0.1
+                if (9<=diem && diem<=10){
+                    document.getElementById('ketQua').value = 'A+'
+                }
+                else if (8.5<=diem && diem<9){
+                    document.getElementById('ketQua').value = 'A'
+                }
+                else if(8<=diem && diem<8.5){
+                    document.getElementById('ketQua').value = 'B+'
+                }
+                else if(7<=diem && diem<8){
+                    document.getElementById('ketQua').value = 'B'
+                }
+                else if(6.5<=diem && diem<7){
+                    document.getElementById('ketQua').value = 'C+'
+                }
+                else if(5.5<=diem && diem<6.5){
+                    document.getElementById('ketQua').value = 'C'
+                }
+                else if(5<=diem && diem<5.5){
+                    document.getElementById('ketQua').value = 'D+'
+                }
+                else if(4<=diem && diem<5){
+                    document.getElementById('ketQua').value = 'D'
+                }
+                else{
+                    document.getElementById('ketQua').value = 'F'
+                }
+            }
+            
+        }
+        
+        
+        
+        
+    </script>
+    
+</body>
+</html>
