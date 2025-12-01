@@ -23,46 +23,46 @@
         include("connect.php");
         $id = $_GET["id"];
         $sql = "select * from nguoi_dung where id ='$id' ";
-        $result = mysqli_query($conn , $sql);
+        $result = mysqli_query($conn , $sql);   
         $nguoiDung = mysqli_fetch_assoc($result);
     ?>
     <div class="form">
-    <form action="index.php?page_layout=capnhat &id=<?php echo $id ?>" method="POST">
+    <form action="index.php?page_layout=capnhat&id=<?php echo $id ?>" method="POST">
         <h1>Cập nhật người dùng</h1>
         <div>
             <p>Tên đăng nhập:</p>
-            <input type="text" name="username" placeholder="Tên đăng nhập" value=<?php echo $nguoiDung['ten_dang_nhap'] ?>>
+            <input type="text" name="username" placeholder="Tên đăng nhập" value="<?php echo $nguoiDung['ten_dang_nhap'] ?>">
         </div>
         <div>
             <p>Mật khẩu:</p>
-            <input type="password" name="password" placeholder="Mật khẩu" value=<?php echo $nguoiDung['mat_khau'] ?>>
+            <input type="password" name="password" placeholder="Mật khẩu" value="<?php echo $nguoiDung['mat_khau'] ?>">
         </div>
         <div>
             <p>Họ và tên:</p>
-            <input type="text" name="ho_ten" placeholder="Nhập họ và tên" value=<?php echo $nguoiDung['ho_ten'] ?>>
+            <input type="text" name="ho_ten" placeholder="Nhập họ và tên" value="<?php echo $nguoiDung['ho_ten'] ?>">
 
         </div>
         <div>
             <p>Email:</p>
-            <input type="email" name="email" placeholder="Nhập email" value=<?php echo $nguoiDung['email'] ?>>
+            <input type="email" name="email" placeholder="Nhập email" value="<?php echo $nguoiDung['email'] ?>">
         </div>
         <div>
             <p>Số điện thoại:</p>
-            <input type="text" name="sdt" placeholder="Nhập số điện thoại" value=<?php echo $nguoiDung['sdt'] ?>>
+            <input type="text" name="sdt" placeholder="Nhập số điện thoại" value="<?php echo $nguoiDung['sdt'] ?>">
 
         </div>
         <div>
             <p>Ngày sinh</p>
-            <input type="date" name="date" value=<?php echo $nguoiDung['date'] ?>>
+            <input type="date" name="date" value="<?php echo $nguoiDung['ngay_sinh'] ?>">
         </div>
         <div>
             <p>Vai trò</p>
             
-            <select name="vai_tro" value=<?php echo $nguoiDung['vai_tro'] ?>>
-                <option value="301">user 1</option>
-                <option value="302">user 2</option>
-                <option value="303">user 3</option>
-                <option value="304">user 4</option>
+            <select name="vai_tro">
+                <option value="301" <?php echo ($nguoiDung['vai_tro_id'] == 1) ? 'selected' :"" ; ?>>user 1</option>
+                <option value="302" <?php echo ($nguoiDung['vai_tro_id'] == 2) ? 'selected' :"" ; ?>>user 2</option>
+                <option value="303" <?php echo ($nguoiDung['vai_tro_id'] == 3) ? 'selected' :"" ; ?>>user 3</option>
+                <option value="304" <?php echo ($nguoiDung['vai_tro_id'] == 4) ? 'selected' :"" ; ?>>user 4</option>
 
             </select>
         </div>
@@ -81,7 +81,7 @@
             !empty($_POST["date"])&&
             !empty($_POST["vai_tro"])
         ){
-            include("connect.php");
+            
             $tenDangNhap = $_POST["username"];
             $password = $_POST["password"];
             $hoTen = $_POST["ho_ten"];
@@ -91,11 +91,11 @@
             $vaiTro = $_POST["vai_tro"];
             
             
-            $sql = "INSERT INTO nguoi_dung (ten_dang_nhap, mat_khau, ho_ten, email, sdt, ngay_sinh, vai_tro_id)
-            VALUES ('$tenDangNhap', '$password', '$hoTen', '$email', '$sdt', '$ngaySinh', '$vaiTro')";
+            $sql = "UPDATE nguoi_dung SET ten_dang_nhap='$tenDangNhap', mat_khau='$password', ho_ten='$hoTen', email='$email', sdt='$sdt', ngay_sinh='$ngaySinh',vai_tro_id='$vaiTro' where id='$id' ";  
             mysqli_query($conn, $sql);
             mysqli_close($conn);
             header("location:index.php?page_layout=nguoidung");
+            echo $sql;
         }
         else{
             echo "<p>Vui lòng nhập đầy đủ thông tin</p>";

@@ -68,13 +68,17 @@
                         break;
                     case 'dangxuat':
                         include "dangxuat.php";
+                        session_unset();
+                        session_destroy();
+                        header("Location:login.php");
                         break;
                     case 'themnguoidung':
                         include "themnguoidung.php";
                         break;
                     case 'capnhat':
                         include "capnhat.php";
-                        break;    
+                        break; 
+                       
                 }
             }
         ?>

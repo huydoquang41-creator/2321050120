@@ -59,7 +59,7 @@
             <td><?php echo $row["vai_tro_id"]; ?></td>
             <td><?php echo $row["ngay_sinh"]; ?></td>
             <td>
-                <a class="" href="index.php?page_layout=capnhat"><button>Sua</button></a>
+                <a class="" href="index.php?page_layout=capnhat&id=<?php echo $row["id"]; ?>"><button>Sua</button></a>
                 <button class="delete"><a class="" href="xoanguoidung.php?id=<?php echo $row["id"]; ?>">Xoa</a></button>
             </td>
         </tr>
