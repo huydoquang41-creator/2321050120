@@ -39,7 +39,12 @@
 
             </ul>
             <ul class="">
-                <li><?php echo "Xin chào " . $_SESSION["username"];?></li>
+                <li><?php
+                include('connect.php');
+                if(isset($_SESSION["username"]) && isset($_SESSION["hoten"])){
+                        echo "Xin chào " . $_SESSION["hoten"];
+                }
+                ?></li>
                 <li><a class="" href="index.php?page_layout=dangxuat">Dang xuat</a></li>
             </ul>
         </nav>
@@ -64,6 +69,12 @@
                     case 'dangxuat':
                         include "dangxuat.php";
                         break;
+                    case 'themnguoidung':
+                        include "themnguoidung.php";
+                        break;
+                    case 'capnhat':
+                        include "capnhat.php";
+                        break;    
                 }
             }
         ?>

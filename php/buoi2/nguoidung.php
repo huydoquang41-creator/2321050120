@@ -7,16 +7,29 @@
     <style>
         a{
             text-decoration: none;
-            color: white;
+            
         }
         .delete{
             background-color: red;
+        }
+        .them{
+            display: flex;
+            justify-content: space-around;
+        }
+        .button{
+            margin-top: 20px;
+            background-color: lawngreen;
+            border-radius: 10px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <center>
-    <h1>Quan li nguoi dung</h1>
+    <div class="them">
+        <h1>Quan li nguoi dung</h1>
+        <a class="" href="index.php?page_layout=themnguoidung"><button class="button"> Thêm người dùng</button></a>
+    </div>
     
     <table border=1>
         <tr>
@@ -46,7 +59,7 @@
             <td><?php echo $row["vai_tro_id"]; ?></td>
             <td><?php echo $row["ngay_sinh"]; ?></td>
             <td>
-                <button>Sua</button>
+                <a class="" href="index.php?page_layout=capnhat"><button>Sua</button></a>
                 <button class="delete"><a class="" href="xoanguoidung.php?id=<?php echo $row["id"]; ?>">Xoa</a></button>
             </td>
         </tr>

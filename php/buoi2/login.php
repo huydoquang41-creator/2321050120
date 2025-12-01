@@ -21,9 +21,9 @@
     </form>
     <?php 
         include('connect.php');
-        if(isset($_POST["username"]) && isset($_POST["password"])){
+        if(isset($_POST['username']) && isset($_POST["password"])){
 
-            $tenDangNhap = $_POST["username"];
+            $tenDangNhap = $_POST['username'];
             $matKhau = $_POST["password"];
             
             // echo $tenDangNhap . "<br>";
@@ -35,13 +35,13 @@
             $sql = "select * from nguoi_dung where ten_dang_nhap = '$tenDangNhap' and mat_khau ='$matKhau'";
             $result = mysqli_query($conn, $sql);
 
-
             if (mysqli_num_rows($result) > 0 ){
+                $user = mysqli_fetch_assoc($result);//Lấy giá thông tin người dùng
                 session_start();
                 $_SESSION["username"] = $tenDangNhap;
                 $_SESSION["password"] = $matKhau;
-                $_SESSION["hoten"] = $hoTen;
-                header("location:index.html");
+                $_SESSION["hoten"] = $user["ho_ten"];//Lưu thông tin thực tế
+                header("Location:index.php");
                 exit();
             }
             

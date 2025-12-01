@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <?php 
+        header("location:login.php");
+    ?>
 </body>
 </html>
