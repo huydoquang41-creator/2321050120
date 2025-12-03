@@ -78,7 +78,12 @@
                     case 'capnhat':
                         include "capnhat.php";
                         break; 
-                       
+                    case 'themquocgia':
+                        include "themquocgia.php";
+                        break;
+                    case 'capnhatquocgia':
+                        include "capnhatquocgia.php";
+                        break;
                 }
             }
         ?>
