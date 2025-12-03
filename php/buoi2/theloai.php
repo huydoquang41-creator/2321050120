@@ -12,12 +12,25 @@
         .delete{
             background-color: red;
         }
+        .khung{
+            display: flex;
+            justify-content: space-around;
+        }
+        .khung button{
+            padding: 15px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 20px;
+            background-color: lawngreen;
+        }
     </style>
 </head>
 <body>
     <center>
-    <h1>Thể loại</h1>
-    
+    <div class="khung">
+        <h1>Thể loại</h1>
+        <a href="themtheloai.php"><button>Thêm thể loại</button></a>
+    </div>
     <table border=1>
         <tr>
             <th>ID</th>
@@ -39,8 +52,8 @@
             <td><?php echo $row["ten_the_loai"]; ?></td>
             
             <td>
-                <button>Sua</button>
-                <button class="delete"><a class="" href="xoanguoidung.php?id=<?php echo $row["id"]; ?>">Xoa</a></button>
+                <a href="index.php?page_layout=capnhattheloai&id=<?php echo $row["id"]; ?>"><button>Sua</button></a>
+                <button class="delete"><a class="" href="xoatheloai.php?id=<?php echo $row["id"]; ?>">Xoa</a></button>
             </td>
         </tr>
 

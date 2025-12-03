@@ -23,18 +23,18 @@
         include("connect.php");
         if(isset($_GET["id"])) {
             $id = $_GET["id"];
-            $sql = "select * from quoc_gia where id ='$id' ";
+            $sql = "select * from the_loai where id ='$id' ";
             $result = mysqli_query($conn,$sql);  
-            $quoc_gia = mysqli_fetch_assoc($result);
+            $the_loai = mysqli_fetch_assoc($result);
         }
     ?>
     <div class="form">
-    <form action="index.php?page_layout=capnhatquocgia&id=<?php echo $id ?>" method="POST">
-        <h1>Cập nhật quốc gia</h1>
-        
+    <form action="index.php?page_layout=capnhattheloai&id=<?php echo $id?>" method="POST">
+        <h1>Cập nhật thể loại</h1>
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
         <div>
-            <p>Tên Quốc Gia:</p>
-            <input type="text" name="quoc_gia" value="<?php echo $quoc_gia['ten_quoc_gia']; ?>">
+            <p>Tên thể loại</p>
+            <input type="text" name="the_loai" value="<?php echo $the_loai['ten_the_loai']; ?>">
         </div>
         <div style="margin-top: 20px;">
             <input type="submit">
@@ -42,18 +42,18 @@
 <?php 
     
         if(
-            !empty($_POST["quoc_gia"])
+            !empty($_POST["the_loai"])
             ){
-                
-                $quocGia = $_POST["quoc_gia"];
+                $theLoai = $_POST["the_loai"];
 
-                $sql = "UPDATE quoc_gia 
-                SET ten_quoc_gia= '$quocGia' 
+                $sql = "UPDATE the_loai 
+                SET ten_the_loai = '$theLoai' 
                 where id = '$id'
                 " ;
                 mysqli_query($conn, $sql);
                 mysqli_close($conn);
-                header("location:index.php?page_layout=quocgia");
+                header("location:index.php?page_layout=theloai");
+                exit();
                 echo $sql;
                 }
                 else{
