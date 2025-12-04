@@ -90,6 +90,12 @@
                     case 'capnhattheloai':
                         include "capnhattheloai.php";
                         break;
+                    case 'themphim':
+                        include "themphim.php";
+                        break;
+                    case 'capnhatphim':
+                        include "capnhatphim.php";
+                        break;
                 }
             }
         ?>

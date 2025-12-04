@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        
         a{
             text-decoration: none;
             
         }
         .delete{
             background-color: red;
+        }
+        .khung{
+            display: flex;
+            justify-content: space-around;
+        }
+        .khung button{
+            padding: 15px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 20px;
+            background-color: lawngreen;
         }
         table{
             text-align: center;
@@ -19,7 +31,10 @@
 </head>
 <body>
     <center>
-    <h1>Bảng phim</h1>
+    <div class="khung">
+        <h1>Bảng Phim</h1>
+        <a href="themphim.php"><button>Thêm phim</button></a>
+    </div>
     <table border=1>
         <tr>
             <th>Id</th>
@@ -54,8 +69,8 @@
             <td><?php echo $row["trailer"]; ?></td>
             <td><?php echo $row["mo_ta"]; ?></td>
             <td>
-                <button>Sua</button>
-                <button class="delete"><a class="" href="xoanguoidung.php?id=<?php echo $row["id"]; ?>">Xoa</a></button>
+                <a href="index.php?page_layout=capnhatphim&id=<?php echo $row['id'] ; ?>"><button>Sua</button></a>
+                <button class="delete"><a class="" href="xoaphim.php?id=<?php echo $row["id"]; ?>">Xoa</a></button>
             </td>
         </tr>
 
