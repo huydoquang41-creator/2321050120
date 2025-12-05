@@ -1,3 +1,38 @@
+<?php 
+        if(!empty($_POST["id"])&& 
+            !empty($_POST["ten_phim"])&&
+            !empty($_POST["the_loai"])&&
+            !empty($_POST["dao_dien_id"])&&
+            !empty($_POST["nam_phat_hanh"])&&
+            !empty($_POST["poster"])&&
+            !empty($_POST["quoc_gia_id"])&&
+            !empty($_POST["so_tap"])&&
+            !empty($_POST["trailer"])&&
+            !empty($_POST["mo_ta"])
+
+        ){
+            include("connect.php");
+            $id = $_POST["id"];
+            $tenpPhim = $_POST["ten_phim"];
+            $theLoai = $_POST["the_loai"];
+            $daoDienId = $_POST["dao_dien_id"];
+            $namPhatHanh = $_POST["nam_phat_hanh"];
+            $poster = $_POST["poster"];
+            $quocGiaId = $_POST["quoc_gia_id"];
+            $soTap = $_POST["so_tap"];
+            $trailer = $_POST["trailer"];
+            $moTa = $_POST["mo_ta"];
+
+            $sql = "INSERT INTO phim (id, ten_phim, the_loai_id,dao_dien_id, nam_phat_hanh, poster, quoc_gia_id, so_tap, trailer, mo_ta)
+            VALUES ('$id', '$tenpPhim', $theLoai,'$daoDienId', '$namPhatHanh', '$poster', '$quocGiaId', '$soTap','trailer','$moTa')";
+            mysqli_query($conn, $sql);
+            mysqli_close($conn);
+            header("location:index.php?page_layout=phim");
+        }
+        else{
+            echo "<p>Vui lòng nhập đầy đủ thông tin</p>";
+        }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,6 +76,19 @@
         <div>
             <p>Tên phim</p>
             <input type="text" name="ten_phim" placeholder="Tên phim" >
+        </div>
+        <div>
+            <p>Thể loại</p>
+            <select name="the_loai" >
+                <?php 
+                    include("connect.php");
+                    $sql = "Select * From the_loai" ;
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_array($result)){
+                ?>
+                    <option value="<?php echo $row['id'] ?>"><?php echo $row['ten_the_loai'] ?></option>
+                <?php } ?>
+            </select>
         </div>
         <div>
             <p>Đạo diễn id</p>
@@ -95,38 +143,6 @@
 
     </form>
     </div>
-    <?php 
-        if(!empty($_POST["id"])&& 
-            !empty($_POST["ten_phim"])&&
-            !empty($_POST["dao_dien_id"])&&
-            !empty($_POST["nam_phat_hanh"])&&
-            !empty($_POST["poster"])&&
-            !empty($_POST["quoc_gia_id"])&&
-            !empty($_POST["so_tap"])&&
-            !empty($_POST["trailer"])&&
-            !empty($_POST["mo_ta"])
-
-        ){
-            include("connect.php");
-            $id = $_POST["id"];
-            $tenpPhim = $_POST["ten_phim"];
-            $daoDienId = $_POST["dao_dien_id"];
-            $namPhatHanh = $_POST["nam_phat_hanh"];
-            $poster = $_POST["poster"];
-            $quocGiaId = $_POST["quoc_gia_id"];
-            $soTap = $_POST["so_tap"];
-            $trailer = $_POST["trailer"];
-            $moTa = $_POST["mo_ta"];
-
-            $sql = "INSERT INTO phim (id, ten_phim, dao_dien_id, nam_phat_hanh, poster, quoc_gia_id, so_tap, trailer, mo_ta)
-            VALUES ('$id', '$tenpPhim', '$daoDienId', '$namPhatHanh', '$poster', '$quocGiaId', '$soTap','trailer','$moTa')";
-            mysqli_query($conn, $sql);
-            mysqli_close($conn);
-            header("location:index.php?page_layout=phim");
-        }
-        else{
-            echo "<p>Vui lòng nhập đầy đủ thông tin</p>";
-        }
-    ?>
+    
 </body>
 </html>

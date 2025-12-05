@@ -27,6 +27,19 @@
         table{
             text-align: center;
         }
+
+        /* th, td {
+        max-width: 150px;  
+        width: 120px;      
+        overflow: hidden;  
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+        } */
+
+        /* td:nth-child(2) { 
+            max-width: 200px;
+            min-width: 150px;
+        }  */
     </style>
 </head>
 <body>
@@ -35,10 +48,11 @@
         <h1>Bảng Phim</h1>
         <a href="themphim.php"><button>Thêm phim</button></a>
     </div>
-    <table border=1>
+    <table border=1 style="width: 100%; height:500px;">
         <tr>
             <th>Id</th>
             <th>Tên phim</th>
+            <th>Thể loại</th>
             <th>Đạo diễn id</th>
             <th>Năm phát hành</th>
             <th>Poster</th>
@@ -50,7 +64,14 @@
         </tr>
         <?php 
             include("connect.php");
-            $sql = "Select * From phim";
+            $sql = "SELECT 
+                p.*, 
+                tl.ten_the_loai,
+                q.ten_quoc_gia
+            FROM phim p
+            LEFT JOIN the_loai tl ON p.the_loai_id = tl.id
+            LEFT JOIN quoc_gia q ON p.quoc_gia_id = q.id
+            ORDER BY p.id " ;
 
             $result = mysqli_query($conn, $sql);
 
@@ -61,10 +82,11 @@
         <tr>
             <td><?php echo $row["id"]; ?></td>
             <td><?php echo $row["ten_phim"]; ?></td>
+            <td><?php echo $row["ten_the_loai"]; ?></td>
             <td><?php echo $row["dao_dien_id"]; ?></td>
             <td><?php echo $row["nam_phat_hanh"]; ?></td>
             <td><?php echo $row["poster"]; ?></td>
-            <td><?php echo $row["quoc_gia_id"]; ?></td>
+            <td><?php echo $row["ten_quoc_gia"]; ?></td>
             <td><?php echo $row["so_tap"]; ?></td>
             <td><?php echo $row["trailer"]; ?></td>
             <td><?php echo $row["mo_ta"]; ?></td>

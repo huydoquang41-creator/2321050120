@@ -22,7 +22,7 @@
     <?php 
         include("connect.php");
         $id = $_GET["id"];
-        $sql = "select * from phim where id ='$id' ";
+        $sql = "SELECT * from phim where id = '$id' ";
         $result = mysqli_query($conn , $sql);   
         $phim = mysqli_fetch_assoc($result);
     ?>
@@ -32,10 +32,14 @@
         <div>
             <p>ID</p>
             <select name="id">
-                <option value="431" <?php echo ($phim['id'] == 1) ? 'selected' :"" ; ?>>431</option>
-                <option value="432" <?php echo ($phim['id'] == 2) ? 'selected' :"" ; ?>>432</option>
-                <option value="433" <?php echo ($phim['id'] == 3) ? 'selected' :"" ; ?>>433</option>
-                <option value="434" <?php echo ($phim['id'] == 4) ? 'selected' :"" ; ?>>434</option>
+                <?php 
+                    include("connect.php");
+                    $sql = "Select id From phim" ;
+                    $result = mysqli_query($conn, $sql);
+                    while($row = mysqli_fetch_array($result)){
+                ?>
+                    <option value="<?php echo $row['id'] ?>"><?php echo $row['id'] ?></option>
+                <?php } ?>    
             </select>
         </div>
         <div>
