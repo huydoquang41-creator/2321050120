@@ -65,13 +65,16 @@
         <?php 
             include("connect.php");
             $sql = "SELECT 
-                p.*, 
+                p.*,
                 tl.ten_the_loai,
+                GROUP_CONCAT(DISTINCT tl.ten_the_loai SEPARATOR ', ') as danh_sach_the_loai,
                 q.ten_quoc_gia
             FROM phim p
-            LEFT JOIN the_loai tl ON p.the_loai_id = tl.id
+            LEFT JOIN phim_theloai pt ON p.id = pt.phim_id
+            LEFT JOIN the_loai tl ON pt.the_loai_id = tl.id
             LEFT JOIN quoc_gia q ON p.quoc_gia_id = q.id
-            ORDER BY p.id " ;
+            GROUP BY p.id, p.ten_phim, q.ten_quoc_gia
+            ORDER BY p.id; " ;
 
             $result = mysqli_query($conn, $sql);
 

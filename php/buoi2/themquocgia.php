@@ -1,13 +1,13 @@
 <?php 
-        if(!empty($_POST["id"]) &&
+        if(
             !empty($_POST["quoc_gia"])
             ){
                 include("connect.php");
-                $id = $_POST["id"];
+                $id = $_GET['id'];
                 $quocGia = $_POST["quoc_gia"];
 
-                $sql = "INSERT INTO quoc_gia(id, ten_quoc_gia)
-                VALUES ('$id', '$quocGia')";
+                $sql = "INSERT INTO quoc_gia(ten_quoc_gia)
+                VALUES ('$quocGia')";
                 mysqli_query($conn, $sql);
                 mysqli_close($conn);
                 header("location:index.php?page_layout=quocgia");
@@ -80,7 +80,7 @@
                 <p><b>Thêm quốc gia</b></p>
             </div>
             <div class="chucnang">
-                <div class="id">
+                <!-- <div class="id">
                 <p>ID:</p>
                 <select name="id">
                     <option value="731">731</option>
@@ -89,7 +89,7 @@
                     <option value="734">744</option>
 
                 </select>
-                </div>
+                </div> -->
                 <div class="quocgia">
                     <p>Tên quốc gia:</p>
                     <input type="text" name="quoc_gia" placeholder="Nhập tên quốc gia muốn thêm">

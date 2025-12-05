@@ -1,13 +1,14 @@
 <?php 
-        if(!empty($_POST["id"]) &&
+        if(
+            // !empty($_POST["id"]) &&
             !empty($_POST["the_loai"])
             ){
                 include("connect.php");
-                $id = $_POST["id"];
+                // $id = $_POST["id"];
                 $theLoai = $_POST["the_loai"];
 
-                $sql = "INSERT INTO the_loai(id, ten_the_loai)
-                VALUES ('$id', '$theLoai')";
+                $sql = "INSERT INTO the_loai( ten_the_loai)
+                VALUES ( '$theLoai')";
                 mysqli_query($conn, $sql);
                 mysqli_close($conn);
                 header("location:index.php?page_layout=theloai");
@@ -79,7 +80,7 @@
             <div class="title">
                 <p><b>Thêm thể loại</b></p>
             </div>
-            <div class="chucnang">
+            <!-- <div class="chucnang">
                 <div class="id">
                 <p>ID:</p>
                 <select name="id">
@@ -89,7 +90,7 @@
                     <option value="34">34</option>
 
                 </select>
-                </div>
+                </div> -->
                 <div class="quocgia">
                     <p>Tên thể loại:</p>
                     <input type="text" name="the_loai" placeholder="Nhập thể loại muốn thêm">

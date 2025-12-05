@@ -1,16 +1,20 @@
 <?php
 session_start();
-include("connect.php");
+
 
 if(isset($_GET['id'])) {
+    include("connect.php");
     $id_xoa = $_GET['id'];
-    
-    // XÓA TRỰC TIẾP KHÔNG KIỂM TRA
-    $sql_xoa = "DELETE FROM quoc_gia WHERE id = $id_xoa";
+    $sql = "SELECT * FROM quoc_gia where id = '$id_xoa'";
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_fetch_row($result) > 0){
+        echo "Đã có phim liên quan đến Quốc Gia muốn xóa! Vui lòng kiểm tra lại "  ;      
+    }
+    else{
+    $sql_xoa = "DELETE FROM phim WHERE id = $id_xoa";
     mysqli_query($conn, $sql_xoa);
+    header("Location: index.php?page_layout=quocgia");
+    exit();
+    }
 }
-
-// QUAY VỀ TRANG QUẢN LÝ NGƯỜI DÙNG
-header("Location: index.php?page_layout=quocgia");
-exit();
 ?>
